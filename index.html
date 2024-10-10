@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Simple modern CSS for better UI */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .task-form input, .task-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .task-form button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .task-form button:hover {
+            background-color: #45a049;
+        }
+        .task-list {
+            margin-top: 20px;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .task-item button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .task-item button:hover {
+            background-color: #e53935;
+        }
+        .edit-button {
+            background-color: #2196F3;
+            margin-right: 5px;
+        }
+        .edit-button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Scheduler</h1>
+        <div class="task-form">
+            <input type="text" id="task-name" placeholder="Task Name" required>
+            <input type="number" id="task-priority" placeholder="Priority (1-10)" min="1" max="10" required>
+            <input type="number" id="task-duration" placeholder="Duration (in hours)" required>
+            <input type="date" id="task-deadline" placeholder="Deadline" required>
+            <input type="time" id="task-time" placeholder="Time" required> <!-- New time input -->
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <h2>Task List</h2>
+        <div id="task-list" class="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
